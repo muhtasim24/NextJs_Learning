@@ -1,5 +1,14 @@
+import ButtonComponent from "./button";
 
-export default function Contact() {
+export default async function Contact() {
     console.log("Is this server or client");
-    return <div>Contact Page</div>
-}
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const posts = await response.json();
+    console.log(posts);
+    
+    return (
+    <div>
+        <ButtonComponent />
+    </div>
+)}
